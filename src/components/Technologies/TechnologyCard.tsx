@@ -7,7 +7,7 @@ interface TechnologyCardProps {
      addToStack: (technology: Technology) => void;
 }
 
-const TechnologyCard = ({ Technology }: TechnologyCardProps) => {
+const TechnologyCard = ({ Technology, isAdded, addToStack }: TechnologyCardProps) => {
      return (
           <article className="w-full border border-black/10 rounded-[17px] p-4 shadow-[0_2px_5px_#15264a03]">
                <div className="flex justify-between gap-20">
@@ -37,8 +37,16 @@ const TechnologyCard = ({ Technology }: TechnologyCardProps) => {
                          </span>
                     </div>
                </div>
-               <button className="w-full mt-5 cursor-pointer rounded-lg font-medium bg-black px-1.25 py-2.5 text-white text-xs ">
-                    Add to Stack
+               <button
+                    onClick={() => addToStack(Technology)}
+                    disabled={isAdded}
+                    className={`w-full mt-5 rounded-lg font-medium px-1.25 py-2.5 text-xs ${
+                         isAdded
+                              ? 'cursor-not-allowed bg-green-50 text-green-600'
+                              : 'cursor-pointer bg-black text-white'
+                    }`}
+               >
+                    {isAdded ? '✓ Added to Stack' : 'Add to Stack'}
                </button>
           </article>
      );

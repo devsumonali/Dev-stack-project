@@ -12,6 +12,7 @@ const technologiesHandler = async (): Promise<Technology[]> => {
 
 function App() {
      const [technologies, setTechnologies] = useState<Technology[]>([]);
+     const [selectedTechnologies, setSelectedTechnologies] = useState<Technology[]>([]);
 
      useEffect(() => {
           technologiesHandler().then((data) => {
@@ -19,14 +20,38 @@ function App() {
           });
      }, []);
 
-     console.log(technologies);
+     const addToStack = (technology: Technology) => {
+          const isExist = selectedTechnologies.some((item) => item.id === technology.id);
+
+          if (isExist) {
+               return;
+          }
+
+          setSelectedTechnologies([...selectedTechnologies, technology]);
+     };
+
+     const removeFromStack = (id: string) => {
+          const remaining = selectedTechnologies.filter((item) => item.id !== id);
+
+          setSelectedTechnologies(remaining);
+     };
+
+     const removeAll = () => {
+          setSelectedTechnologies([]);
+     };
 
      return (
           <>
                <Navbar />
 
                <main>
-                    <Home technologies={technologies} />
+                    <Home
+                         technologies={technologies}
+                         selectedTechnologies={selectedTechnologies}
+                         addToStack={addToStack}
+                         removeFromStack={removeFromStack}
+                         removeAll={removeAll}
+                    />
                </main>
 
                <Footer />

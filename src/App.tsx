@@ -1,9 +1,19 @@
-import './App.css';
+import Footer from './components/Footer/Footer';
+import Navbar from './components/Navbar/Navbar';
+import Home from './pages/Home';
 
 function App() {
      return (
           <>
-               <h1 className="font-bold text-3xl">hello world</h1>
+               <Navbar />
+
+               <h1 className="text-5xl font-bold text-red-500">Tailwind Working</h1>
+
+               <main>
+                    <Home />
+               </main>
+
+               <Footer />
           </>
      );
 }

@@ -1,3 +1,5 @@
+import { FiPlus } from 'react-icons/fi';
+import { IoClose } from 'react-icons/io5';
 import type { Technology } from '../../types';
 import TechnologyCard from './TechnologyCard';
 
@@ -47,7 +49,6 @@ function Technologies({
                               })}
                          </div>
 
-                         {/* Your Stack */}
                          <div className="w-full lg:w-[25%] lg:sticky lg:top-24 self-start">
                               <div className="w-full border border-black/10 rounded-[17px] p-4 shadow-[0_2px_5px_#15264a03]">
                                    <h3 className="text-lg font-bold">Your Stack</h3>
@@ -59,9 +60,7 @@ function Technologies({
                                    {selectedTechnologies.length === 0 ? (
                                         <div className="py-10 text-center">
                                              <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-full bg-[#F8FAFC]">
-                                                  <span className="text-2xl text-brand-text">
-                                                       +
-                                                  </span>
+                                                  <FiPlus className="text-2xl text-brand-text" />
                                              </div>
 
                                              <p className="text-sm font-semibold text-brand-text">
@@ -77,7 +76,7 @@ function Technologies({
                                              {selectedTechnologies.map((Technology) => (
                                                   <div
                                                        key={Technology.id}
-                                                       className="flex items-center gap-3 border border-black/10 rounded-lg p-2"
+                                                       className="flex items-center justify-between gap-3 border border-black/10 rounded-lg py-4 px-3"
                                                   >
                                                        <img
                                                             src={`/${Technology.icon}`}
@@ -99,9 +98,9 @@ function Technologies({
                                                             onClick={() =>
                                                                  removeFromStack(Technology.id)
                                                             }
-                                                            className="cursor-pointer text-xl text-brand-text"
+                                                            className="cursor-pointer text-xl text-brand-text transition-colors hover:text-red-500"
                                                        >
-                                                            ×
+                                                            <IoClose />
                                                        </button>
                                                   </div>
                                              ))}

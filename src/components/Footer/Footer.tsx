@@ -11,12 +11,12 @@ export default function Footer() {
                                         className="w-32.5"
                                    />
                               </a>
-                              <p className="text-[14px] font-normal text-[#64748B]">
+                              <p className="text-[14px] font-normal text-brand-text">
                                    Curated tools, technologies, and resources for developers
                                    building modern software.
                               </p>
                               <div>
-                                   <ul className="font-bold text-[16px] text-[#64748B] flex gap-5">
+                                   <ul className="font-bold text-[16px] text-brand-text flex gap-5">
                                         <li>
                                              <a href="#">Github</a>
                                         </li>
@@ -32,7 +32,7 @@ export default function Footer() {
                          <div>
                               <h3 className="mb-3 font-bold text-[16px]">PRODUCT</h3>
 
-                              <ul className="flex flex-col gap-2 font-normal text-[14px] text-[#64748B]">
+                              <ul className="flex flex-col gap-2 font-normal text-[14px] text-brand-text">
                                    <li>
                                         <a href="#">Home</a>
                                    </li>
@@ -47,7 +47,7 @@ export default function Footer() {
                          <div>
                               <h3 className="mb-3 font-bold text-[16px]">COMPANY</h3>
 
-                              <ul className="flex flex-col gap-2 font-normal text-[14px] text-[#64748B]">
+                              <ul className="flex flex-col gap-2 font-normal text-[14px] text-brand-text">
                                    <li>
                                         <a href="#">About</a>
                                    </li>
@@ -62,7 +62,7 @@ export default function Footer() {
                          <div className="col-span-2 md:col-span-1">
                               <h3 className="mb-3 font-bold text-[16px]">LEGAL</h3>
 
-                              <ul className="flex flex-col gap-2 font-normal text-[14px] text-[#64748B]">
+                              <ul className="flex flex-col gap-2 font-normal text-[14px] text-brand-text ">
                                    <li>
                                         <a href="#">Privacy Policy</a>
                                    </li>
@@ -76,10 +76,10 @@ export default function Footer() {
                          </div>
                     </div>
                     <div className="flex flex-col md:flex-row justify-between gap-5 py-4">
-                         <p className="text-[#64748B] text-sm">
+                         <p className="text-brand-text text-sm">
                               © 2026 Dev Stack. All rights reserved.
                          </p>
-                         <ul className="flex gap-5 text-[#64748B]">
+                         <ul className="flex gap-5 text-brand-text">
                               <li>
                                    <a href="#">Privacy</a>
                               </li>

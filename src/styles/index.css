@@ -16,6 +16,7 @@ body {
      --color-brand-orange: #ff5722;
      --color-brand-pink: #d81b7e;
      --color-brand-violet: #7c3aed;
+     --color-brand-text: #475569;
 }
 
 @utility brand-gradient {

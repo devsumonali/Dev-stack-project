@@ -22,7 +22,7 @@ export default function Navbar() {
 
                     {/* Desktop Menu */}
                     <nav className="hidden md:block">
-                         <ul className="flex items-center gap-5 text-[16px] font-semibold text-[#475569]">
+                         <ul className="flex items-center gap-5 text-[16px] font-semibold text-brand-text">
                               <li>
                                    <a href="#home" className="text-brand-pink">
                                         Home

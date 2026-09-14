@@ -5,6 +5,7 @@ import type { Technology } from '../types';
 interface HomeProps {
      technologies: Technology[];
      selectedTechnologies: Technology[];
+     loading: boolean;
      addToStack: (technology: Technology) => void;
      removeFromStack: (id: string) => void;
      removeAll: () => void;
@@ -16,6 +17,7 @@ function Home({
      addToStack,
      removeFromStack,
      removeAll,
+     loading,
 }: HomeProps) {
      return (
           <div>
@@ -27,6 +29,7 @@ function Home({
                     addToStack={addToStack}
                     removeFromStack={removeFromStack}
                     removeAll={removeAll}
+                    loading={loading}
                />
           </div>
      );

@@ -9,6 +9,7 @@ interface TechnologiesProps {
      addToStack: (technology: Technology) => void;
      removeFromStack: (id: string) => void;
      removeAll: () => void;
+     loading: boolean;
 }
 
 function Technologies({
@@ -17,9 +18,10 @@ function Technologies({
      addToStack,
      removeFromStack,
      removeAll,
+     loading,
 }: TechnologiesProps) {
      return (
-          <section className="bg-white py-3 px-5 lg:py-6">
+          <section id="technologies" className="bg-white py-3 px-5 lg:py-6">
                <div className="container mx-auto">
                     <div className="mb-8">
                          <h2 className="text-3xl md:text-4xl font-bold">
@@ -32,22 +34,28 @@ function Technologies({
                     </div>
 
                     <div className="flex flex-col lg:flex-row gap-5 justify-between items-start">
-                         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full lg:w-[75%]">
-                              {technologies.map((Technology) => {
-                                   const isAdded = selectedTechnologies.some(
-                                        (item) => item.id === Technology.id,
-                                   );
+                         {loading ? (
+                              <p className="py-20 text-center text-brand-text">
+                                   Loading Technology...
+                              </p>
+                         ) : (
+                              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full lg:w-[75%]">
+                                   {technologies.map((Technology) => {
+                                        const isAdded = selectedTechnologies.some(
+                                             (item) => item.id === Technology.id,
+                                        );
 
-                                   return (
-                                        <TechnologyCard
-                                             key={Technology.id}
-                                             Technology={Technology}
-                                             isAdded={isAdded}
-                                             addToStack={addToStack}
-                                        />
-                                   );
-                              })}
-                         </div>
+                                        return (
+                                             <TechnologyCard
+                                                  key={Technology.id}
+                                                  Technology={Technology}
+                                                  isAdded={isAdded}
+                                                  addToStack={addToStack}
+                                             />
+                                        );
+                                   })}
+                              </div>
+                         )}
 
                          <div className="w-full lg:w-[25%] lg:sticky lg:top-24 self-start">
                               <div className="w-full border border-black/10 rounded-[17px] p-4 shadow-[0_2px_5px_#15264a03]">

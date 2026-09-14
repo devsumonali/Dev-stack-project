@@ -8,15 +8,11 @@ export default function Navbar() {
                <div className="container mx-auto flex items-center justify-between gap-5 ">
                     {/* Mobile Hamburger */}
                     <button className="md:hidden" onClick={() => setMenuOpen(!menuOpen)}>
-                         <img
-                              src="/public/images/hamburger.png"
-                              alt="Open menu"
-                              className="h-6 w-6"
-                         />
+                         <img src="/images/hamburger.png" alt="Open menu" className="h-6 w-6" />
                     </button>
 
                     {/* Logo */}
-                    <a href="#home">
+                    <a href="/">
                          <img src="/images/logo-text.png" alt="Dev Stack Logo" className="w-32.5" />
                     </a>
 
@@ -24,7 +20,7 @@ export default function Navbar() {
                     <nav className="hidden md:block">
                          <ul className="flex items-center gap-5 text-[16px] font-semibold text-brand-text">
                               <li>
-                                   <a href="#home" className="text-brand-pink">
+                                   <a href="/" className="text-brand-pink">
                                         Home
                                    </a>
                               </li>

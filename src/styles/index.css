@@ -9,7 +9,9 @@
 body {
      @apply font-jakarta;
 }
-
+html {
+     scroll-behavior: smooth;
+}
 @import 'tailwindcss';
 
 @theme {

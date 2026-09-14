@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import Footer from './components/Footer/Footer';
 import Navbar from './components/Navbar/Navbar';
 import Home from './pages/Home';
 import type { Technology } from './types';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 
 const technologiesHandler = async (): Promise<Technology[]> => {
      const res = await fetch('/data/technologies.json');
@@ -15,10 +15,12 @@ const technologiesHandler = async (): Promise<Technology[]> => {
 function App() {
      const [technologies, setTechnologies] = useState<Technology[]>([]);
      const [selectedTechnologies, setSelectedTechnologies] = useState<Technology[]>([]);
+     const [loading, setLoading] = useState(true);
 
      useEffect(() => {
           technologiesHandler().then((data) => {
                setTechnologies(data);
+               setLoading(false);
           });
      }, []);
 
@@ -59,6 +61,7 @@ function App() {
                          addToStack={addToStack}
                          removeFromStack={removeFromStack}
                          removeAll={removeAll}
+                         loading={loading}
                     />
                </main>
 
